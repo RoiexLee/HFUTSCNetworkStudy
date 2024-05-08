@@ -5,6 +5,7 @@
 A GitHub workflow to check in the second class of HFUT automatically uses GitHub Actions and Python, supporting single choice, multiple choice, and video questions.
 
 [README CHINESE](./README_EN.md)
+
 [README ENGLISH](./README_EN.md)
 
 ## Table of Contents
