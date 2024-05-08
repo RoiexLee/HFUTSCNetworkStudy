@@ -1,11 +1,16 @@
 # HFUTSCNetworkStudy
 
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+
+[README ENGLISH](./README_EN.md)
+
 一个用于自动完成 HFUT 第二课堂网络学习模块的 Github 工作流，使用 GitHub Actions 和 Python，支持单选题、多选题和视频题
 
 ## 目录
 
 - [安装](#安装)
 - [使用](#使用)
+- [徽章](#徽章)
 - [相关工作](#相关工作)
 - [维护者](#维护者)
 - [证书](#证书)
@@ -52,6 +57,10 @@ $ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
     - `KEY_SESSION`: 必须，`Secret` 填写 `key_session` 的值
     - `SECRET`: 必须，`Secret` 填写 `secret` 的值
 3. Star Fork 之后的仓库以启动 GitHub Actions
+
+## 徽章
+
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 ## 相关工作
 
