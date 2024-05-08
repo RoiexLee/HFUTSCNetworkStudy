@@ -1,27 +1,53 @@
-# GladosAutoCheckin
+# HFUTSCNetworkStudy
 
-A GitHub workflow to check in Glados automatically uses GitHub Actions and Python.
+A GitHub workflow to check in the second class of HFUT automatically uses GitHub Actions and Python, supporting single choice, multiple choice, and video questions.
 
 ## Table of Contents
 
+- [Install](#install)
 - [Usage](#usage)
 - [License](#license)
 
+## Install
+
+### Local Install
+
+You can install this project locally by following the steps below.
+
+```shell
+$ pip install -r requirements.txt
+```
+
+Then, you can run the script by using the [Local Usage](#local-usage).
+
+### GitHub Actions Install
+
+You can also install this project by using the GitHub Actions workflow.
+
+See the [GitHub Actions Usage](#github-actions-usage) section for more information.
+
 ## Usage
 
-1. Fork this repository.
-2. Add the following secrets in the repository settings.
-   - `COOKIES`: Required, your Glados Cookies.
-     - Firstly, log in [Glados](https://glados.rocks/) and visit [Glados Checkin](https://glados.rocks/console/checkin).
-     - Secondly, press `F12` to open the developer tools, clicking on the Network tab and pressing `ctrl` and `r` to refreshing the page.
-     - Thirdly, find the request with the name `checkin` and copy the value of the `Cookie` header.
-     - Fourthly, move to GitHub respiratory `Settings > Secrets and variables > Actions > New Repository secret`, the `Name` is `COOKIES` and the `Sercret` is the value of the `Cookie` header.
-     - Note, `COOKIES` support multiple cookies, they should be split with `&`.
-     
-   ![image](./images/image.png)
+### Get key_session and secret
 
-   - `TOKEN`: Optional, your PushDeer token.
-     - You can get it from [PushDeer](https://www.pushdeer.com/product.html).
+1. Install Fiddler and configure the certificate. The process can be referred to [here](https://zhuanlan.zhihu.com/p/410150022).
+2. Install the PC version of WeChat and enter the second class of HFUT to capture the package.
+3. Log in and enter the network learning module, click on an article, and exit. *(The header has a secret only when entering the article)*
+
+   ![image](./images/key_session_and_secret.png)
+
+### Local Usage
+
+```shell
+$ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
+```
+
+### GitHub Actions Usage
+
+1. Fork this repository.
+2. Add the following secrets in the repository settings, move to GitHub respiratory `Settings > Secrets and variables > Actions > New Repository secret`.
+    - `KEY_SESSION`: Required, the `Secret` is the value of `key_session`.
+    - `SECRET`: Required, the `Secret` is th value of `secret`.
 3. Star the repository you Forked.
 
 ## License
