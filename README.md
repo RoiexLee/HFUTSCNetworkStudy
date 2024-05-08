@@ -4,7 +4,7 @@
 
 一个用于自动完成 HFUT 第二课堂网络学习模块的 Github 工作流，使用 GitHub Actions 和 Python，支持单选题、多选题和视频题
 
-- [README CHINESE](./README_EN.md)
+- [README CHINESE](./README.md)
 - [README ENGLISH](./README_EN.md)
 
 ## 目录
