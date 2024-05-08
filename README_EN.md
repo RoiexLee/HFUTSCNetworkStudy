@@ -1,11 +1,17 @@
 # HFUTSCNetworkStudy
 
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+
 A GitHub workflow to check in the second class of HFUT automatically uses GitHub Actions and Python, supporting single choice, multiple choice, and video questions.
+
+[README CHINESE](./README_EN.md)
+[README ENGLISH](./README_EN.md)
 
 ## Table of Contents
 
 - [Install](#install)
 - [Usage](#usage)
+- [Badges](#badges)
 - [Related Efforts](#related-efforts)
 - [Maintainers](#maintainers)
 - [License](#license)
@@ -52,6 +58,10 @@ $ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
     - `KEY_SESSION`: Required, the `Secret` is the value of `key_session`.
     - `SECRET`: Required, the `Secret` is th value of `secret`.
 3. Star the repository you Forked.
+
+## Badges
+
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 ## Related Efforts
 
