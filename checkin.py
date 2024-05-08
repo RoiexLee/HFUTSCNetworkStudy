@@ -109,7 +109,7 @@ class Answer:
             if que_type == 0:
                 for choice in choices:
                     try:
-                        res_answer = self.session.post(url=self.url + endpoint_answer, data=json.dumps(choice))
+                        res_answer = self.session.post(url=self.url + endpoint_answer, data=json.dumps([choice]), verify=False)
                         if res_answer.status_code == 200:
                             desc = res_answer.json()["data"]["desc"]
                             if "恭喜" in desc:
