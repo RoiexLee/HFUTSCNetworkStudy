@@ -6,6 +6,8 @@ A GitHub workflow to check in the second class of HFUT automatically uses GitHub
 
 - [Install](#install)
 - [Usage](#usage)
+- [Related Efforts](#related-efforts)
+- [Maintainers](#maintainers)
 - [License](#license)
 
 ## Install
@@ -49,6 +51,14 @@ $ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
     - `KEY_SESSION`: Required, the `Secret` is the value of `key_session`.
     - `SECRET`: Required, the `Secret` is th value of `secret`.
 3. Star the repository you Forked.
+
+## Related Efforts
+
+- [SecondClass](https://github.com/Zirconium233/SecondClass) - A Python script to check in the second class of HFUT automatically.
+
+## Maintainers
+
+[@RoiexLee](https://roiexlee.github.io).
 
 ## License
 
