@@ -21,7 +21,7 @@ $ git clone https://github.com/RoiexLee/HFUTSCNetworkStudy.git
 $ pip install -r requirements.txt
 ```
 
-之后，你可以按照 [本地使用](#本地使用) 运行脚本。
+之后，你可以按照 [本地使用](#本地使用) 运行脚本
 
 ### GitHub Actions 安装
 
@@ -33,7 +33,7 @@ $ pip install -r requirements.txt
 
 ### 获得 key_session 和 secret
 
-1. 安装 Fiddler 并且配置证书，这个过程可以参考 [这里](https://zhuanlan.zhihu.com/p/410150022).
+1. 安装 Fiddler 并且配置证书，这个过程可以参考 [这里](https://zhuanlan.zhihu.com/p/410150022)
 2. 安装微信 PC 版并且进入 HFUT 第二课堂小程序，准备抓包
 3. 登录并且进入网络学习模块，选择一篇文章点击进入，等待加载完毕退出，此时 key_session 和 secret 可以在某个记录中的 header 中查看，注意进入文章时才有 secret
 
@@ -59,7 +59,7 @@ $ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
 
 ## 维护者
 
-[@RoiexLee](https://roiexlee.github.io).
+[@RoiexLee](https://roiexlee.github.io)
 
 ## 证书
 
