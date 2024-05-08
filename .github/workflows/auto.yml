@@ -2,7 +2,7 @@ name: HFUTSCNetworkStudy
 
 on:
   schedule:
-    - cron: "30 1 * * *"
+    - cron: "00 1 * * *"
   watch:
     types: [ started ]
 
@@ -23,6 +23,6 @@ jobs:
           pip install -r requirements.txt
       - name: Run checkin
         run: |
-          python3 checkin.py ${{ secrets.KEY_SESSION }} ${{ secrets.SECRET }}
+          python3 checkin.py --key_session ${{ secrets.KEY_SESSION }} --secret ${{ secrets.SECRET }}
       - name: Keep alive
         uses: gautamkrishnar/keepalive-workflow@v1
