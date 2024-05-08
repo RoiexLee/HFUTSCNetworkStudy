@@ -1,65 +1,66 @@
 # HFUTSCNetworkStudy
 
-A GitHub workflow to check in the second class of HFUT automatically uses GitHub Actions and Python, supporting single choice, multiple choice, and video questions.
+一个用于自动完成 HFUT 第二课堂网络学习模块的 Github 工作流，使用 GitHub Actions 和 Python，支持单选题、多选题和视频题
 
-## Table of Contents
+## 目录
 
-- [Install](#install)
-- [Usage](#usage)
-- [Related Efforts](#related-efforts)
-- [Maintainers](#maintainers)
-- [License](#license)
+- [安装](#安装)
+- [使用](#使用)
+- [相关工作](#相关工作)
+- [维护者](#维护者)
+- [证书](#证书)
 
-## Install
+## 安装
 
-### Local Install
+### 本地安装
 
-You can install this project locally by following the steps below.
+你可以通过下述步骤进行本地安装
 
 ```shell
+$ git clone https://github.com/RoiexLee/HFUTSCNetworkStudy.git
 $ pip install -r requirements.txt
 ```
 
-Then, you can run the script by using the [Local Usage](#local-usage).
+之后，你可以按照 [本地使用](#本地使用) 运行脚本。
 
-### GitHub Actions Install
+### GitHub Actions 安装
 
-You can also install this project by using the GitHub Actions workflow.
+你同样也可以使用 Github Actions 安装本项目
 
-See the [GitHub Actions Usage](#github-actions-usage) section for more information.
+查看 [GitHub Actions 使用](#github-actions-使用) 部分获得更多信息
 
-## Usage
+## 使用
 
-### Get key_session and secret
+### 获得 key_session 和 secret
 
-1. Install Fiddler and configure the certificate. The process can be referred to [here](https://zhuanlan.zhihu.com/p/410150022).
-2. Install the PC version of WeChat and enter the second class of HFUT to capture the package.
-3. Log in and enter the network learning module, click on an article, and exit. *(The header has a secret only when entering the article)*
+1. 安装 Fiddler 并且配置证书，这个过程可以参考 [这里](https://zhuanlan.zhihu.com/p/410150022).
+2. 安装微信 PC 版并且进入 HFUT 第二课堂小程序，准备抓包
+3. 登录并且进入网络学习模块，选择一篇文章点击进入，等待加载完毕退出，此时 key_session 和 secret 可以在某个记录中的 header 中查看，注意进入文章时才有 secret
 
    ![image](./images/key_session_and_secret.png)
 
-### Local Usage
+### 本地使用
 
 ```shell
 $ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
 ```
 
-### GitHub Actions Usage
+### GitHub Actions 使用
 
-1. Fork this repository.
-2. Add the following secrets in the repository settings, move to GitHub respiratory `Settings > Secrets and variables > Actions > New Repository secret`.
-    - `KEY_SESSION`: Required, the `Secret` is the value of `key_session`.
-    - `SECRET`: Required, the `Secret` is th value of `secret`.
-3. Star the repository you Forked.
+1. Fork 这个仓库
+2. 在仓库设置中添加 secrets，移动到 Fork 后的仓库，依次点击 `Settings > Secrets and variables > Actions > New Repository secret`
+    - `KEY_SESSION`: 必须，`Secret` 填写 `key_session` 的值.
+    - `SECRET`: 必须，`Secret` 填写 `secret` 的值.
+3. Star Fork 之后的仓库以启动 GitHub Actions
 
-## Related Efforts
+## 相关工作
 
-- [SecondClass](https://github.com/Zirconium233/SecondClass) - A Python script to check in the second class of HFUT automatically.
+- [SecondClass](https://github.com/Zirconium233/SecondClass) - 一个用于自动完成 HFUT 第二课堂网络学习的 Python 脚本
 
-## Maintainers
+## 维护者
 
 [@RoiexLee](https://roiexlee.github.io).
 
-## License
+## 证书
 
 [GPL-3.0](./LICENSE) © [RoiexLee](https://roiexlee.github.io) 
