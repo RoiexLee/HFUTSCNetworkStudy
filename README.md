@@ -24,6 +24,7 @@
 
 ```shell
 $ git clone https://github.com/RoiexLee/HFUTSCNetworkStudy.git
+$ cd HFUTSCNetworkStudy
 $ pip install -r requirements.txt
 ```
 
@@ -48,8 +49,10 @@ $ pip install -r requirements.txt
 ### 本地使用
 
 ```shell
-$ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
+$ python checkin.py --key_session=<key_session> --secret=<secret> --page_max=1
 ```
+
+其中 `--page_max` 为可选参数，表示搜索的最大页数，默认为 `1`
 
 ### GitHub Actions 使用
 
@@ -57,6 +60,7 @@ $ python checkin.py --key_session <key_session> --secret <secret> --page_max 1
 2. 在仓库设置中添加 secrets，移动到 Fork 后的仓库，依次点击 `Settings > Secrets and variables > Actions > New Repository secret`
     - `KEY_SESSION`: 必须，`Secret` 填写 `key_session` 的值
     - `SECRET`: 必须，`Secret` 填写 `secret` 的值
+    - `PAGE_MAX`: 可选，`Secret` 填写 `page_max` 的值
 3. Star Fork 之后的仓库以启动 GitHub Actions
 
 ## 徽章
