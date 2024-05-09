@@ -60,7 +60,7 @@ Where `--page_max` is an optional parameter that represents the maximum number o
 2. Add the following secrets in the repository settings, move to GitHub respiratory `Settings > Secrets and variables > Actions > New Repository secret`
     - `KEY_SESSION`: Required, the `Secret` is the value of `key_session`
     - `SECRET`: Required, the `Secret` is th value of `secret`
-    - `PAGE_MAX`: Optional, the `Secret` is the value of `page_max`
+    - `PAGE_MAX`: Required, the `Secret` is the value of `page_max`
 3. Star the repository you Forked
 
 ## Badges
