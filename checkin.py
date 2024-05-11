@@ -64,7 +64,7 @@ class Answer:
             "columnType": colum_type
         }
         try:
-            res = self.session.post(url=self.url + endpoint_page, data=json.dumps(data), verify=False)
+            res = self.session.post(url=self.url + endpoint_page, data=json.dumps(data))
             if res.status_code == 200:
                 return res.json()["data"]["list"]
             res.raise_for_status()
@@ -81,7 +81,7 @@ class Answer:
         logger.info(f"Study article id: {article_id}")
         endpoint_questions = self.endpoint_questions.format(article_id=article_id)
         try:
-            res_questions = self.session.get(url=self.url + endpoint_questions, verify=False)
+            res_questions = self.session.get(url=self.url + endpoint_questions)
             if res_questions.status_code == 200:
                 logger.info("Get questions successfully")
             else:
@@ -109,7 +109,7 @@ class Answer:
             if que_type == 0:
                 for choice in choices:
                     try:
-                        res_answer = self.session.post(url=self.url + endpoint_answer, data=json.dumps([choice]), verify=False)
+                        res_answer = self.session.post(url=self.url + endpoint_answer, data=json.dumps([choice]))
                         if res_answer.status_code == 200:
                             desc = res_answer.json()["data"]["desc"]
                             if "恭喜" in desc:
