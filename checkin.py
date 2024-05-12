@@ -1,6 +1,7 @@
 import argparse
 import json
 import logging
+import time
 
 import requests
 import urllib3
@@ -101,6 +102,7 @@ class Answer:
             logger.info("No questions in this article")
             return 3
         for question in questions:
+            time.sleep(30)
             endpoint_answer = self.endpoint_answer.format(question_id=question["id"])
             # que_type is 0 for single choice, 1 for multiple choice
             que_type = question["queType"]
