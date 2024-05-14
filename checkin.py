@@ -151,6 +151,9 @@ class Answer:
             if articles is None:
                 continue
             for article in articles:
+                if article["correct"] == "已完成":
+                    logger.info("Already answered, skip")
+                    continue
                 ret = self.study(article["id"])
                 if ret == 1:
                     return
