@@ -67,7 +67,12 @@ class Answer:
         try:
             res = self.session.post(url=self.url + endpoint_page, data=json.dumps(data))
             if res.status_code == 200:
-                return res.json()["data"]["list"]
+                res_json = res.json()
+                if res_json["code"] == "1005":
+                    logger.info(res_json["errMsg"])
+                    return None
+                if res_json["code"] == "200":
+                    return res_json["data"]["list"]
             res.raise_for_status()
         except requests.RequestException as e:
             logger.error(e)
