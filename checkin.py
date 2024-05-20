@@ -109,7 +109,6 @@ class Answer:
             return 3
         for question in questions:
             logger.info("Sleep 30s before answering")
-            time.sleep(30)
 
             endpoint_answer = self.endpoint_answer.format(question_id=question["id"])
             # que_type is 0 for single choice, 1 for multiple choice
@@ -159,7 +158,8 @@ class Answer:
             if articles is None:
                 continue
             for article in articles:
-                if article.json()["correct"] == "已完成":
+                if article["correct"] == "已完成":
+                    logger.info(f"Succeed article: {article['id']}")
                     logger.info("Already answered, skip")
                     continue
                 ret = self.study(article["id"])
