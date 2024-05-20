@@ -96,18 +96,21 @@ class Answer:
             logger.error(e)
             return 0
 
-        if res_questions.json()["data"]["todayReach"]:
+        res_questions_json = res_questions.json()
+        if res_questions_json["data"]["todayReach"]:
             logger.info("Already reached today, skip")
             return 1
-        if res_questions.json()["data"]["accquieCredit"]:
+        if res_questions_json["data"]["accquieCredit"]:
             logger.info("Already answered, skip")
             return 2
-        questions = res_questions.json()["data"]["questions"]
+        questions = res_questions_json["data"]["questions"]
         if len(questions) == 0:
             logger.info("No questions in this article")
             return 3
         for question in questions:
+            logger.info("Sleep 30s before answering")
             time.sleep(30)
+
             endpoint_answer = self.endpoint_answer.format(question_id=question["id"])
             # que_type is 0 for single choice, 1 for multiple choice
             que_type = question["queType"]
@@ -156,6 +159,9 @@ class Answer:
             if articles is None:
                 continue
             for article in articles:
+                if article.json()["correct"] == "已完成":
+                    logger.info("Already answered, skip")
+                    continue
                 ret = self.study(article["id"])
                 if ret == 1:
                     return
