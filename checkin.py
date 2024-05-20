@@ -57,7 +57,7 @@ class Answer:
         backtrack(0, [])
         return result
 
-    def get_articles(self, page=1, size=20, colum_type="99"):
+    def get_articles(self, page=1, size=10, colum_type="99"):
         endpoint_page = self.endpoint_page.format(page=page, size=size)
         # columType is for different categories, for example, 0 for learning new thoughts, 99 for latest
         data = {
