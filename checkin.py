@@ -150,6 +150,7 @@ class Answer:
 
     def run(self, page_max=1):
         for page in range(1, page_max + 1):
+            logger.info(f"Searching in page: {page}")
             articles = self.get_articles(page)
             if articles is None:
                 continue
