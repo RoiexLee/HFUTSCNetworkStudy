@@ -88,9 +88,7 @@ class Answer:
         endpoint_questions = self.endpoint_questions.format(article_id=article_id)
         try:
             res_questions = self.session.get(url=self.url + endpoint_questions)
-            if res_questions.status_code == 200:
-                logger.info("Get questions successfully")
-            else:
+            if res_questions.status_code != 200:
                 res_questions.raise_for_status()
         except requests.RequestException as e:
             logger.error(e)
@@ -157,7 +155,7 @@ class Answer:
                 continue
             for article in articles:
                 if article["correct"] == "已完成":
-                    logger.info(f"Succeed article: {article['id']}")
+                    logger.info(f"Study article id: {article['id']}")
                     logger.info("Already answered, skip")
                     continue
                 ret = self.study(article["id"])
