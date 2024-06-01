@@ -69,8 +69,7 @@ class Answer:
             if res.status_code == 200:
                 res_json = res.json()
                 if res_json["code"] == "1005":
-                    logger.info(res_json["errMsg"])
-                    return None
+                    raise Exception("Secret or key_session is invalid")
                 if res_json["code"] == "200":
                     return res_json["data"]["list"]
             res.raise_for_status()
