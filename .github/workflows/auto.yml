@@ -24,5 +24,3 @@ jobs:
       - name: Run checkin
         run: |
           python3 checkin.py --key_session=${{ secrets.KEY_SESSION }} --secret=${{ secrets.SECRET }} --page_max=${{ secrets.PAGE_MAX }}
-      - name: Keep alive
-        uses: gautamkrishnar/keepalive-workflow@v1
